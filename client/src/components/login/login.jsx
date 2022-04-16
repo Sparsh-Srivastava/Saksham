@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import jwt_decode from "jwt-decode";
-import img from "../../assets/3.jpg";
+import jwt_decode from "jwt-decode";
 import styles from "./login.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import LoginSchema from "../../utils/loginSchema";
@@ -13,32 +12,25 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 function Login(props) {
   const [loginPassword, setLogin] = useState("password");
   const [signUpPassword, setSignUp] = useState("password");
-  //   const checkLogin = () => {
-  //     var token = localStorage.getItem("authToken");
-  //     if (token == null) {
-  //       localStorage.removeItem("userType");
-  //       localStorage.removeItem("userId");
-  //     } else {
-  //       var id = localStorage.getItem("userId");
-  //       if (id == null) {
-  //         localStorage.removeItem("authToken");
-  //         localStorage.removeItem("userType");
-  //       }
-  //       const details = jwt_decode(localStorage.getItem("authToken"));
-  //       var exp = details.exp * 1000;
-  //       if (new Date(exp) < new Date() || details.id != id) {
-  //         localStorage.removeItem("userId");
-  //         localStorage.removeItem("userType");
-  //         localStorage.removeItem("authToken");
-  //       } else {
-  //         if(localStorage.getItem("userType") == 'Admin'){
-  //           (window.location.href = "/dashboard")
-  //         }else{
-  //           (window.location.href = "/userDashboard")
-  //         }
-  //       }
-  //     }
-  //   };
+  const checkLogin = () => {
+    var token = localStorage.getItem("authToken");
+    if (token == null) {
+      localStorage.removeItem("userId");
+    } else {
+      var id = localStorage.getItem("userId");
+      if (id == null) {
+        localStorage.removeItem("authToken");
+      }
+      const details = jwt_decode(localStorage.getItem("authToken"));
+      var exp = details.exp * 1000;
+      if (new Date(exp) < new Date() || details.id != id) {
+        localStorage.removeItem("userId");
+        localStorage.removeItem("authToken");
+      } else {
+        window.location.href = "/dashboard";
+      }
+    }
+  };
   const Toast = Swal.mixin({
     position: "top-end",
     toast: true,
@@ -46,7 +38,7 @@ function Login(props) {
     showConfirmButton: false,
   });
   useEffect(() => {
-    // checkLogin();
+    checkLogin();
   });
   return (
     <div>
@@ -125,25 +117,19 @@ function Login(props) {
                   validationSchema={LoginSchema}
                   onSubmit={async (values) => {
                     await axios
-                      .post("https://web-security-research-app.herokuapp.com/api/auth/login", values)
+                      .post("/api/auth/login", values)
                       .then((data) => {
                         if (data.status == 200) {
                           localStorage.setItem("authToken", data.data.token);
                           localStorage.setItem("userId", data.data.id);
-                          localStorage.setItem("userType", data.data.role);
                           Toast.fire({
                             title: "Login Successfull",
                             icon: "success",
                             timer: 1500,
                             timerProgressBar: true,
-                            didClose: () =>{
-                              if(data.data.role == 'Admin'){
-                                (window.location.href = "/dashboard")
-                              }else{
-                                (window.location.href = "/userDashboard")
-                              }
-                            }
-                              ,
+                            didClose: () => {
+                              window.location.href = "/dashboard";
+                            },
                           });
                         }
                       })
@@ -160,7 +146,6 @@ function Login(props) {
                           });
                           localStorage.removeItem("authToken");
                           localStorage.removeItem("userId");
-                          localStorage.removeItem("userType");
                         }
                       });
                     console.log(values);
@@ -240,15 +225,18 @@ function Login(props) {
                     await axios
                       .post("/api/auth/register", values)
                       .then((data) => {
-                        console.log(data)
+                        console.log(data);
                         if (data.status == 200) {
                           localStorage.setItem("authToken", data.data.token);
                           localStorage.setItem("userId", data.data.id);
                           Toast.fire({
-                            title: "Login Successfull",
+                            title: "Registration Successfull",
                             icon: "success",
                             timer: 1500,
                             timerProgressBar: true,
+                            didClose: () => {
+                              window.location.href = "/dashboard";
+                            },
                           });
                         }
                       })
@@ -259,12 +247,18 @@ function Login(props) {
                     return (
                       <Form autoComplete="off">
                         <label htmlFor="ngo_name">NGO Name</label>
-                        <Field name="ngo_name" placeholder="Enter your NGO Name" />
+                        <Field
+                          name="ngo_name"
+                          placeholder="Enter your NGO Name"
+                        />
                         <span className="error">
                           <ErrorMessage name="ngo_name"></ErrorMessage>
                         </span>
                         <label htmlFor="founder_name">Founder's Name</label>
-                        <Field name="founder_name" placeholder="Enter your Founder's Name" />
+                        <Field
+                          name="founder_name"
+                          placeholder="Enter your Founder's Name"
+                        />
                         <span className="error">
                           <ErrorMessage name="founder_name"></ErrorMessage>
                         </span>

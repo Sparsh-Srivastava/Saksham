@@ -15,27 +15,27 @@ import jwt_decode from "jwt-decode";
 function Footer() {
     const [logIn,setLoggedIn] = useState(false); 
   useEffect(()=>{
-    // var token = localStorage.getItem("authToken");
-    // console.log(token);
-    // if (token == null) {
-    //   localStorage.removeItem("userId");
-    //   setLoggedIn(false);
-    // } else {
-    //   var uid = localStorage.getItem("userId");
-    //   if (uid == null) {
-    //     localStorage.removeItem("authToken");
-    //     setLoggedIn(false);
-    //   }
-    //   const details = jwt_decode(localStorage.getItem("authToken"));
-    //   var exp = details.exp * 1000;
-    //   if (new Date(exp) < new Date() || details.id != uid) {
-    //     localStorage.removeItem("userId");
-    //     localStorage.removeItem("authToken");
-    //     setLoggedIn(false);
-    //   } else {
-    //     setLoggedIn(true);
-    //   }
-    // }
+    var token = localStorage.getItem("authToken");
+    console.log(token);
+    if (token == null) {
+      localStorage.removeItem("userId");
+      setLoggedIn(false);
+    } else {
+      var uid = localStorage.getItem("userId");
+      if (uid == null) {
+        localStorage.removeItem("authToken");
+        setLoggedIn(false);
+      }
+      const details = jwt_decode(localStorage.getItem("authToken"));
+      var exp = details.exp * 1000;
+      if (new Date(exp) < new Date() || details.id != uid) {
+        localStorage.removeItem("userId");
+        localStorage.removeItem("authToken");
+        setLoggedIn(false);
+      } else {
+        setLoggedIn(true);
+      }
+    }
   },[])
   return (
     <footer id="contactUs">
@@ -61,7 +61,7 @@ function Footer() {
           <a href="/explore">Explore</a>
           {
               logIn ?
-              <a href="/login">Dashboard</a>
+              <a href="/dashboard">Dashboard</a>
               :
               <a href="/login">Login</a>
           }

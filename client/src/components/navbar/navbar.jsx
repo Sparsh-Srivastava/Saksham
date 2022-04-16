@@ -79,7 +79,7 @@ function Navbar(props) {
             <li class="nav-item">
               <a
                 class="nav-link active"
-                href="/userDashboard"
+                href="/dashboard"
                 tabindex="-1"
                 aria-disabled="true"
               >
