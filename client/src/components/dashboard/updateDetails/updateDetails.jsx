@@ -4,11 +4,11 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { MdAdd, MdOutlineCancel } from "react-icons/md";
 import styles from "./updateDetails.module.css";
-function UpdateDetails({ ngo }) {
-  const [selectTags, setTags] = useState([]);
-  const [branches, setBranches] = useState([]);
-  const [img, setImg] = useState([]);
-  const [logo, setLogo] = useState("");
+function UpdateDetails({ ngoDetails }) {
+  const [selectTags, setTags] = useState(ngoDetails.donation_type);
+  const [branches, setBranches] = useState(ngoDetails.branches);
+  const [img, setImg] = useState(ngoDetails.gallery);
+  const [logo, setLogo] = useState(ngoDetails.logo);
   const [imgError, setImgError] = useState([]);
   const [branchError, setBranchError] = useState([]);
   const [tagError, setTagError] = useState([]);
@@ -20,6 +20,7 @@ function UpdateDetails({ ngo }) {
   });
   const addLogo = (data) => {
     setLogo(data);
+    // console.log(logo);
   };
   const removeLogo = () => {
     setLogo();
@@ -103,22 +104,25 @@ function UpdateDetails({ ngo }) {
       <Formik
         initialValues={{
           logo: logo,
-          ngo_description: "",
-          website_link: "",
-          ceo_statemaent: "",
+          ngo_description: ngoDetails.ngo_description,
+          website_link: ngoDetails.website_link,
+          ceo_statemaent: ngoDetails.ceo_statemaent,
           gallery: img,
           donation_type: selectTags,
           branches: branches,
-          funds: "",
-          phone: "",
-          email: "",
-          instagram: "",
-          linkdin: "",
+          funds: ngoDetails.funds,
+          phone: ngoDetails.phone,
+          email: ngoDetails.email,
+          instagram: ngoDetails.instagram,
+          linkdin: ngoDetails.linkdin,
           testimonial: [],
         }}
         // validationSchema={LoginSchema}
         onSubmit={async (values) => {
-          console.log(values);
+          values.logo = logo;
+          values.branches = branches;
+          values.gallery = img;
+          values.donation_type = selectTags;
           await axios
             .patch(
               `/api/details/updateDetails/${localStorage.getItem("userId")}`,
@@ -165,6 +169,7 @@ function UpdateDetails({ ngo }) {
                       type="button"
                       className=" rounded-circle"
                       onClick={(e) => {
+                        var a = document.getElementById("logo").value;
                         addLogo(document.getElementById("logo").value);
                         document.getElementById("logo").value = "";
                       }}

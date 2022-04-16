@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./individualNGO.module.css";
 import { FaUserCircle } from "react-icons/fa";
 import Gallery from "./gallery/gallery";
-import axios from "axios";
-function IndividualNGO(props) {
+function IndividualNGO({ngoDetails}) {
+  console.log(ngoDetails);
+  const [ngo,setNGO] = useState(ngoDetails);
   const imgs = [
     "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
     "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
@@ -14,36 +15,20 @@ function IndividualNGO(props) {
     "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
     "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
   ];
-  const getDetails = async ()=>{
-    await axios
-      .get(`/api/details/getNGO/${localStorage.getItem('userId')}`)
-      .then((data)=>{
-        console.log(data.data);
-      })
-      .catch((err) => console.log(err));
-  }
-  useEffect( () => {
-    getDetails();
-  }, []);
   return (
+    ngo != undefined ?
     <div className={styles.individualNGO}>
       <div className="row align-items-center">
         <div className="col-md-3 text-center">
           <img
-            src="https://d3jmn01ri1fzgl.cloudfront.net/photoadking/webp_thumbnail/60ba0dd75e0b1_json_image_1622805975.webp"
+            src={ngo.logo}
             alt=""
           />
         </div>
         <div className="col-md-9">
-          <h3>Prayas</h3>
+          <h3>{ngo.ngo_name}</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            {ngo.ngo_description}
           </p>
           <button className={`ms-auto btn btn-primary ${styles.webBtn}`}>
             Visit Website
@@ -112,6 +97,7 @@ function IndividualNGO(props) {
         <h4>Funds</h4>
       </div>
     </div>
+    : ''
   );
 }
 
