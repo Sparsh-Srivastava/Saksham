@@ -87,6 +87,12 @@ exports.updateDetails = async (req, res, next) => {
   );
 };
 
+exports.getDetails = async (req, res, next) => {
+  let id = req.params.id;
+  const ngo = await User.findById(id);
+  return res.send(ngo);
+};
+
 const sendToken = (user, statusCode, res) => {
   const token = user.getSignedJwtToken();
   res
