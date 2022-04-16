@@ -49,6 +49,44 @@ exports.login = async (req, res, next) => {
   }
 };
 
+exports.updateDetails = async (req, res, next) => {
+  let id = req.params.id;
+
+  let updated = User.findByIdAndUpdate(
+    id,
+    {
+      $set: {
+        logo: req.body.logo,
+        ngo_description: req.body.ngo_description,
+        website_link: req.body.website_link,
+        ceo_statement: req.body.ceo_statement,
+        testimonial: req.body.testimonial,
+        gallery: req.body.gallery,
+        donation_type: req.body.donation_type,
+        branches: req.body.branches,
+        funds: req.body.funds,
+        phone: req.body.phone,
+        email: req.body.email,
+        instagram: req.body.instagram,
+        linkdin: req.body.linkdin,
+      },
+    },
+    (err, user) => {
+      if (err) {
+        res.json({
+          message: "There was an error",
+          error: err,
+        });
+      } else {
+        res.json({
+          message: "Details updated",
+          data: user,
+        });
+      }
+    }
+  );
+};
+
 const sendToken = (user, statusCode, res) => {
   const token = user.getSignedJwtToken();
   res

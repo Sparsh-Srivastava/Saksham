@@ -28,6 +28,61 @@ const UserSchema = new mongoose.Schema(
       minlength: 6,
       select: false,
     },
+    logo: {
+      type: String,
+    },
+    ngo_description: {
+      type: String,
+    },
+    website_link: {
+      type: String,
+    },
+    ceo_statement: {
+      type: String,
+    },
+    gallery: [
+      {
+        type: String,
+      },
+    ],
+    donation_type: [
+      {
+        type: String,
+      },
+    ],
+    branches: [
+      {
+        type: String,
+      },
+    ],
+    funds: {
+      type: Number,
+    },
+    phone: {
+      type: Number,
+    },
+    email: {
+      type: String,
+    },
+    instagram: {
+      type: String,
+    },
+    linkdin: {
+      type: String,
+    },
+    testimonial: [
+      {
+        image: {
+          type: String,
+        },
+        name: {
+          type: String,
+        },
+        text: {
+          type: String,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
