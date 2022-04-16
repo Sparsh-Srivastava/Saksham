@@ -17,3 +17,25 @@ code {
   font-weight: 600;
   text-align: center;
 }
+.BrainhubCarousel__arrows,
+.BrainhubCarousel__arrows{
+  display: block;
+  background-color: #5cdb95 !important;
+  width: max-content;
+  padding: 1% 2%;
+  border: 3px solid #5cdb95 !important;
+  color: #fff;
+  border-radius: 32px;
+  font-weight: 600;
+  transition: all 0.25s;
+}
+.BrainhubCarousel__arrows:hover,
+.BrainhubCarousel__arrows:hover {
+  background-color: #fff !important;
+  color: #5cdb95;
+  border-color: #5cdb95 !important;
+}
+.BrainhubCarousel__arrows:hover span,
+.BrainhubCarousel__arrows:hover span{
+  border-color: #5cdb95 !important;
+}

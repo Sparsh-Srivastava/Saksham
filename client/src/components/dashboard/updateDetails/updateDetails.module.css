@@ -1,0 +1,200 @@
+.update {
+    text-align: left;
+    padding: 2% 5% 0%;
+  }
+  .update label{
+      color: #05386B;
+
+  }
+  .update textarea{
+    resize: none;
+  }
+  .update input,
+  .update textarea, .update select {
+    border: none;
+    display: block;
+    border-bottom: 1.5px solid black;
+    width: 100%;
+    margin: 0.5% 0;
+    padding: 0.5%;
+    caret-color: #05386B;
+    color: #5f6368;
+  }
+  .update input:active,
+  .update input:focus-visible,
+  .update input:active::placeholder,
+  .update input:focus-visible::placeholder,
+  .update textarea:active,
+  .update textarea:focus-visible,
+  .update textarea:active::placeholder,
+  .update textarea:focus-visible::placeholder{
+    outline: none;
+    border-width: 3px;
+    color: #05386B;
+    border-color: #05386B;
+    font-weight: 500;
+  }
+  .update li {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .update ul {
+    padding: 0 !important;
+    list-style: disc !important;
+    margin: 0 !important;
+  }
+  .update form > div {
+    margin: 4% 0;
+  }
+  .update form > div:nth-child(2) > div:first-child {
+    padding-left: 0;
+  }
+  .update form > div:nth-child(2) > div:last-child {
+    padding-right: 0;
+  }
+  .update form > div:nth-child(12) > div button,
+  .update form > div:nth-child(1) > div button,
+  .update form > div:nth-child(10) > div button,
+  .update form > div:nth-child(11) > div button {
+    display: block;
+    background-color: #05386B;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10%;
+    margin-top: 5%;
+  }
+  .update form > div:nth-child(10) > p {
+    margin-top: 2%;
+  }
+  .update form > div:nth-child(11) > p > p,.update form > div:nth-child(12) > p > p {
+    background-color: #7cd1b8;
+    color: #fff;
+    padding: 0.25% 1% 0.5%;
+    margin: 0.5%;
+    position: relative;
+    padding-right: 3%;
+    display: inline-block;
+  }
+  .update form > div:nth-child(11) > p > p > button,.update form > div:nth-child(12) > p > p > button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    padding: 0%;
+    border: none;
+    height: 100%;
+  }
+  .update form > div:nth-child(11) > p > p > button > svg,.update form > div:nth-child(12) > p > p > button > svg {
+    background-color: transparent;
+    fill: #fff;
+    border-radius: 16px;
+    height: 100%;
+  }
+  .update form label {
+    font-size: 120%;
+    margin-bottom: 1%;
+  }
+  
+  .update form > div:nth-child(10) > p,.update form > div:nth-child(1) > p {
+    margin-top: 2%;
+  }
+  .update form > div:nth-child(10) > p > span,.update form > div:nth-child(1) > p > span{
+    color: #fff;
+    margin: 0 2%;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  .update form > div:nth-child(10) > p > span > button,.update form > div:nth-child(1) > p > span > button {
+    position: absolute;
+    right: -13px;
+    top: -13px;
+    background-color: transparent;
+    padding: 0%;
+    border: none;
+  }
+  .update form > div:nth-child(10) > p > span > button > svg, .update form > div:nth-child(1) > p span > button > svg{
+    background-color: #f00;
+    fill: #fff;
+    border-radius: 16px;
+    height: 100%;
+  }
+  
+  
+  .update form > div:nth-child(10) > p ,.update form > div:nth-child(1) > p {
+    margin-top: 2%;
+  }
+  .update form > div:nth-child(10) > p > p, .update form > div:nth-child(1) > p > p {
+    color: #ffffff;
+    margin: 2% 1% 0;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 8px;
+  }
+  .update form > div:nth-child(10) > p > p > button, .update form > div:nth-child(1) > p > p > button {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background-color: transparent;
+    padding: 0%;
+    border: none;
+  }
+  .update form > div:nth-child(10) > p > p > button > svg , .update form > div:nth-child(1) > p > p > button{
+    background-color: #f00;
+    fill: #fff;
+    border-radius: 16px;
+    height: 100%;
+  }
+  
+  .update > form > button{
+    display: block;
+    background-color: #5CDB95;
+    padding: 1% 5%;
+    padding-right: 4%;
+    border: 3px solid #5CDB95;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.25s;
+    margin: 2% auto;
+  }
+  .update > form > button:hover {
+    display: block;
+    background-color: #fff;
+    padding-right: 4%;
+    color: #5CDB95;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  @media (max-width: 900px) {
+    .update form > button {
+      width: 25%;
+    }
+    .update form > div:nth-child(8) > p > span {
+      padding-right: 6%;
+    }
+    .update form > div:nth-child(3) > p > span {
+      margin: 5% 2%;
+    }
+  }
+  @media (max-width: 900px) {
+    .update form > button {
+      width: 50%;
+    }
+    .update form > div:nth-child(8) > p > span {
+      padding-right: 10%;
+      padding-left: 2%;
+      margin: 1% 2%;
+      display: inline-block;
+    }
+    .update form > div:nth-child(2) > div {
+      padding: 0;
+      margin: 4% 0;
+    }
+    .update form > div:nth-child(8) > p > p {
+      padding-right: 10%;
+      padding-left: 3%;
+    }
+  }
