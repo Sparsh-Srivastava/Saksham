@@ -3,4 +3,31 @@
   color: #05386B;
   text-align: left;
   padding: 5%;
+  margin: 0 !important;
+}
+.dashboard > div > button{
+  display: block;
+  background-color: #5CDB95;
+  padding: 4% 5%;
+  padding-right: 4%;
+  border: 3px solid #5CDB95;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.25s;
+}
+.dashboard > div > button:hover {
+  display: block;
+  background-color: #fff;
+  padding: 4% 5%;
+  padding-right: 4%;
+  color: #5CDB95;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.viewSwal{
+  width: 85vw !important;
+}
+.viewSwal h2{
+  color: #05386B;
 }

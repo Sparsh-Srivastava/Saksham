@@ -1,0 +1,37 @@
+.webBtn {
+  display: block;
+  background-color: #5cdb95;
+  width: max-content;
+  padding: 1% 2%;
+  border: 3px solid #5cdb95;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 3%;
+  transition: all 0.25s;
+}
+.webBtn:hover {
+  background-color: #fff;
+  color: #5cdb95;
+  border-color: #5cdb95;
+}
+.wordFromFounder{
+    margin-top: 3%;
+    padding: 1%;
+}
+.individualNGO{
+    margin: 3% 0;
+}
+.individualNGO h3,.individualNGO h4{
+    color: #05386B;
+    font-weight: 600;
+}
+.testimonials{
+    padding: 1%;
+}
+.testimonials > div{
+    margin-top: 2%;
+}
+.testimonials p{
+    margin-bottom: 0;
+}

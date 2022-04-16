@@ -1,0 +1,7 @@
+.gallery{
+    padding: 1%;
+    margin: 1% 0;
+}
+.gallery > div{
+    margin-top: 3%;
+}
