@@ -1,0 +1,44 @@
+.donation span {
+  background-color: #5cdb95;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 1% 2%;
+  padding: 2% 8%;
+  border-radius: 8px;
+  display: inline-block;
+}
+.donation h5 {
+  margin: 5% 0;
+}
+.ngoCard {
+  padding: 3%;
+}
+.ngoCard > div {
+  border-radius: 16px !important;
+}
+.ngoCard img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.ngoCard > div > div {
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0 ;
+}
+.ngoCard > div > div > a {
+  width: 100%;
+  border: 3px solid #5cdb95;
+  background-color: #5cdb95;
+  font-weight: 800;
+  margin-top: 3%;
+  transition: all 0.25s;
+  color: #fff;
+  border-radius: 0px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.ngoCard > div > div > a:hover {
+  background-color: #fff;
+  color: #5cdb95;
+  border-color: #5cdb95;
+}

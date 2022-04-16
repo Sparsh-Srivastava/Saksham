@@ -8,7 +8,9 @@ import {
 import "./App.css";
 import Dashboard from "./components/dashboard/dashboard";
 import Home from "./components/home/home";
+import IndividualPage from "./components/individualPage/individualPage";
 import Login from "./components/login/login";
+import Explore from './components/explore/explore';
 function RequireAuth({ children }) {
   var token = localStorage.getItem("authToken");
   console.log(token);
@@ -40,6 +42,8 @@ function App() {
         <Routes>
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/explore" element={<Explore />} />
+          <Route exact path="/ngo/:id" element={<IndividualPage />} />
           <Route
             exact
             path="/dashboard"

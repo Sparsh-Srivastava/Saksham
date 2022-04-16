@@ -52,6 +52,10 @@
   .update form > div:nth-child(2) > div:last-child {
     padding-right: 0;
   }
+  .update form  img{
+    width: 25vw !important;
+  }
+
   .update form > div:nth-child(12) > div button,
   .update form > div:nth-child(1) > div button,
   .update form > div:nth-child(10) > div button,

@@ -16,11 +16,13 @@
   border-color: #5cdb95;
 }
 .wordFromFounder{
-    margin-top: 3%;
+    margin-top: 1%;
     padding: 1%;
 }
 .individualNGO{
-    margin: 3% 0;
+    margin: 0% 0 5%;
+    max-width: 100vw;
+    text-align: left;
 }
 .individualNGO h3,.individualNGO h4{
     color: #05386B;
@@ -34,4 +36,28 @@
 }
 .testimonials p{
     margin-bottom: 0;
+}
+.individualNGO > div  img{
+    width: 100%;
+}
+.donation,.contactUs{
+    padding: 1%;
+    margin-top: 1%;
+}
+.donation span{
+    background-color: #5cdb95;
+    color: #fff;
+    text-transform: capitalize;
+    margin: 0 0.5%;
+    padding: 0.5%;
+    border-radius: 8px;
+}
+.donation h5{
+    margin: 2% 0;
+}
+.contactUs h3{
+    margin-bottom: 2%;
+}
+.contactUs h5 span{
+    color: #5cdb95;
 }

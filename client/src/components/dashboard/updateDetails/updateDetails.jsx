@@ -106,7 +106,7 @@ function UpdateDetails({ ngoDetails }) {
           logo: logo,
           ngo_description: ngoDetails.ngo_description,
           website_link: ngoDetails.website_link,
-          ceo_statemaent: ngoDetails.ceo_statemaent,
+          ceo_statement: ngoDetails.ceo_statement,
           gallery: img,
           donation_type: selectTags,
           branches: branches,
@@ -135,7 +135,8 @@ function UpdateDetails({ ngoDetails }) {
                   title: "Details Successfully Updated",
                   icon: "success",
                   timer: 1500,
-                  timerProgressBar: true
+                  timerProgressBar: true,
+                  didClose: ()=>window.location.reload()
                 });
               }
             })
@@ -232,15 +233,15 @@ function UpdateDetails({ ngoDetails }) {
                 </span>
               </div>
               <div>
-                <label htmlFor="ceo_statemaent">Founder Statement</label>
+                <label htmlFor="ceo_statement">Founder Statement</label>
                 <Field
                   as="textarea"
                   type="text"
-                  name="ceo_statemaent"
+                  name="ceo_statement"
                   placeholder="Enter your NGO Description"
                 />
                 <span className="error">
-                  <ErrorMessage name="ceo_statemaent"></ErrorMessage>
+                  <ErrorMessage name="ceo_statement"></ErrorMessage>
                 </span>
               </div>
               <div>
