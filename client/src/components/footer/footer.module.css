@@ -1,0 +1,205 @@
+footer img {
+  width: 100%;
+}
+footer {
+  text-align: center;
+  padding: 3% 10% 5% !important;
+  color: #000;
+  background-color :#5CDB95;
+  margin: 0 !important;
+  max-width: 100vw !important;
+  font-family: 'Poppins';
+}
+footer a {
+  text-decoration: none;
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 5%;
+  font-weight: 600;
+  font-size: 130%;
+}
+footer h3 {
+  font-weight: 600;
+  margin: 10% 0 5%;
+}
+footer a:hover {
+  color: #000;
+  text-decoration: none;
+}
+footer svg {
+  font-size: 3rem;
+  margin: 2%;
+}
+.contactUs svg {
+  font-size: 150%;
+}
+.contactUs {
+  padding-left: 5%;
+}
+.contactUs div {
+  margin-top: 3%;
+  text-align: justify;
+}
+
+.socialBtns {
+  overflow: hidden;
+}
+.socialBtns a {
+  color: #fff;
+}
+.socialBtns .btn,
+.socialBtns .btn:before,
+.socialBtns .btn .fa {
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.socialBtns .btn:before {
+  top: 90%;
+  left: -110%;
+}
+.socialBtns .btn .fa {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.socialBtns .btn.facebook:before {
+  background: #3b5998;
+}
+.socialBtns .btn.facebook .fa {
+  color: #3b5998;
+}
+
+.socialBtns .btn.github:before {
+  background: #161b22;
+}
+.socialBtns .btn.github .fa {
+  color: #161b22;
+}
+
+.socialBtns .btn.twitter:before {
+  background: #1c98e5;
+}
+.socialBtns .btn.twitter .fa {
+  color: #1c98e5;
+}
+
+.socialBtns .btn.discord:before {
+  background: #6d81ce;
+}
+.socialBtns .btn.discord .fa {
+  color: #6d81ce;
+}
+
+.socialBtns .btn.insta:before {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  color: #fff;
+}
+.socialBtns .btn.insta .fa {
+  color: #df468b;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  background: -webkit-radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  padding: 3px 3px 5px;
+}
+
+.socialBtns .btn.google:before {
+  background: #dc4a38;
+}
+.socialBtns .btn.google .fa {
+  color: #dc4a38;
+}
+
+.socialBtns .btn.linkedin:before {
+  background: #0077b5;
+}
+.socialBtns .btn.linkedin .fa {
+  color: #0077b5;
+}
+
+.socialBtns .btn:focus:before,
+.socialBtns .btn:hover:before {
+  top: -10%;
+  left: -10%;
+}
+.socialBtns .btn:focus .fa,
+.socialBtns .btn:hover .fa {
+  color: #fff;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.socialBtns .btn {
+  display: inline-block;
+  background: #fff;
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  margin: 5px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  -webkit-border-radius: 30%;
+  -moz-border-radius: 30%;
+  border-radius: 30%;
+  border-color: transparent;
+  box-shadow: 0 7px 18px -7px rgba(0, 0, 0, 0.18);
+  opacity: 0.99;
+  padding: 0;
+}
+.socialBtns .btn:before {
+  content: "";
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.socialBtns .btn .fa {
+  font-size: 38px;
+  vertical-align: middle;
+}
+
+.socialBtns .insta .fa {
+  font-size: 250%;
+}
+.socialBtns .github .fa {
+  font-size: 200%;
+}
+
+@media (max-width: 900px) {
+  footer > div > div {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  footer > div > div {
+    margin-top: 15%;
+  }
+  footer h1 {
+    margin: 10% 0 5%;
+  }
+  footer h3 {
+    margin: 10% 0;
+  }
+}
