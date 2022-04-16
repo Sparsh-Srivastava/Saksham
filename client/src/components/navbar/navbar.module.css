@@ -1,0 +1,27 @@
+.navbar{
+    z-index: 1;
+    background-color: #fff !important;
+    font-family: "Poppins";
+}
+.navbar a{
+    color: #05386B !important;
+    font-size: 110%;
+    transition: all 0.25s;
+    padding: 0.5rem 1rem !important;
+    border-radius: 16px;
+}
+.navbar div > a:first-child{
+    font-size: 120%;
+    font-weight: 600;
+}
+.navbar ul{
+    width: 50%;
+    justify-content: end;
+}
+.navbar ul li{
+    margin: 0 1%;
+}
+.navbar ul li a:hover{
+    color: #fff !important;
+    background-color: #5CDB95;
+}
