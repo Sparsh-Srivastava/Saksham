@@ -25,3 +25,9 @@
     color: #fff !important;
     background-color: #5CDB95;
 }
+@media (max-width:960px){
+    .navbar ul{
+        width: 100%;
+        justify-content: center;
+    }
+}
