@@ -153,6 +153,11 @@
   .login form input {
     margin-top: 1%;
   }
+  .login .cItem {
+    min-height: 100vh;
+    padding: 12% 5% 5%;
+    height: auto;
+  }
 }
 @media (max-width: 480px) {
   .login {
@@ -161,6 +166,11 @@
   .login form button {
     padding: 4%;
     width: 100%;
+  }
+  .login form button:hover {
+    padding: 4%;
+    width: 100%;
+    margin-top: 10%;
   }
   .login a {
     margin-top: 3%;

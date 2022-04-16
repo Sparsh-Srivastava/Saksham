@@ -105,7 +105,6 @@ function Login(props) {
               </div>
             </div>
           </div>
-          {/* <img src='https://akm-img-a-in.tosshub.com/indiatoday/images/bodyeditor/201909/boy-330582_960_720-x640.jpg?LmD0LKbk6ek.kT8UFhoKiDkpTFtjPQBZ' alt="" /> */}
         </div>
         <div className="col-lg-6">
           <div
@@ -125,52 +124,46 @@ function Login(props) {
                   }}
                   validationSchema={LoginSchema}
                   onSubmit={async (values) => {
-                    // await axios
-                    //   .post("https://web-security-research-app.herokuapp.com/api/auth/login", values)
-                    //   .then((data) => {
-                    //     if (data.status == 200) {
-                    //       localStorage.setItem("authToken", data.data.token);
-                    //       localStorage.setItem("userId", data.data.id);
-                    //       localStorage.setItem("userType", data.data.role);
-                    //       Toast.fire({
-                    //         title: "Login Successfull",
-                    //         icon: "success",
-                    //         timer: 1500,
-                    //         timerProgressBar: true,
-                    //         didClose: () =>{
-                    //           if(data.data.role == 'Admin'){
-                    //             (window.location.href = "/dashboard")
-                    //           }else{
-                    //             (window.location.href = "/userDashboard")
-                    //           }
-                    //         }
-                    //           ,
-                    //       });
-                    //     }
-                    //   })
-                    //   .catch((err) => {
-                    //     if (
-                    //       err.message == "Request failed with status code 401"
-                    //     ) {
-                    //       Toast.fire({
-                    //         title: "Invalid Credentials",
-                    //         icon: "error",
-                    //         timer: 3000,
-                    //         timerProgressBar: true,
-                    //         didClose: () => window.location.reload(),
-                    //       });
-                    //       localStorage.removeItem("authToken");
-                    //       localStorage.removeItem("userId");
-                    //       localStorage.removeItem("userType");
-                    //     }
-                    //   });
-                    // console.log(values);
-                    Toast.fire({
-                      title: "Login Successfull",
-                      icon: "success",
-                      timer: 1500,
-                      timerProgressBar: true,
-                    });
+                    await axios
+                      .post("https://web-security-research-app.herokuapp.com/api/auth/login", values)
+                      .then((data) => {
+                        if (data.status == 200) {
+                          localStorage.setItem("authToken", data.data.token);
+                          localStorage.setItem("userId", data.data.id);
+                          localStorage.setItem("userType", data.data.role);
+                          Toast.fire({
+                            title: "Login Successfull",
+                            icon: "success",
+                            timer: 1500,
+                            timerProgressBar: true,
+                            didClose: () =>{
+                              if(data.data.role == 'Admin'){
+                                (window.location.href = "/dashboard")
+                              }else{
+                                (window.location.href = "/userDashboard")
+                              }
+                            }
+                              ,
+                          });
+                        }
+                      })
+                      .catch((err) => {
+                        if (
+                          err.message == "Request failed with status code 401"
+                        ) {
+                          Toast.fire({
+                            title: "Invalid Credentials",
+                            icon: "error",
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didClose: () => window.location.reload(),
+                          });
+                          localStorage.removeItem("authToken");
+                          localStorage.removeItem("userId");
+                          localStorage.removeItem("userType");
+                        }
+                      });
+                    console.log(values);
                   }}
                 >
                   {(formProps) => {
@@ -214,7 +207,6 @@ function Login(props) {
                         <span className="error">
                           <ErrorMessage name="password"></ErrorMessage>
                         </span>
-                        <a href="/forgot">Forgot your password?</a>
                         <button type="submit">Login</button>
                       </Form>
                     );
@@ -237,47 +229,44 @@ function Login(props) {
                 <h1>Sign Up</h1>
                 <Formik
                   initialValues={{
-                    founderName: "",
-                    ngoName: "",
+                    founder_name: "",
+                    ngo_name: "",
                     email: "",
                     password: "",
                   }}
                   validationSchema={SignUpSchema}
                   onSubmit={async (values) => {
-                    // await axios
-                    //   .post("https://web-security-research-app.herokuapp.com/api/auth/register", values)
-                    //   .then((data) => {
-                    //     Toast.fire({
-                    //       title: "User Successfully Registered",
-                    //       icon: "success",
-                    //       timer: 3000,
-                    //       timerProgressBar: true,
-                    //       didClose: () => window.location.reload(),
-                    //     });
-                    //   })
-                    //   .catch((err) => console.log(err));
-                    // console.log(values);
-                    Toast.fire({
-                            title: "User Successfully Registered",
+                    console.log(values);
+                    await axios
+                      .post("/api/auth/register", values)
+                      .then((data) => {
+                        console.log(data)
+                        if (data.status == 200) {
+                          localStorage.setItem("authToken", data.data.token);
+                          localStorage.setItem("userId", data.data.id);
+                          Toast.fire({
+                            title: "Login Successfull",
                             icon: "success",
-                            timer: 3000,
+                            timer: 1500,
                             timerProgressBar: true,
-                            didClose: () => window.location.reload(),
                           });
+                        }
+                      })
+                      .catch((err) => console.log(err));
                   }}
                 >
                   {(formProps) => {
                     return (
                       <Form autoComplete="off">
-                        <label htmlFor="ngoName">NGO Name</label>
-                        <Field name="ngoName" placeholder="Enter your NGO Name" />
+                        <label htmlFor="ngo_name">NGO Name</label>
+                        <Field name="ngo_name" placeholder="Enter your NGO Name" />
                         <span className="error">
-                          <ErrorMessage name="ngoName"></ErrorMessage>
+                          <ErrorMessage name="ngo_name"></ErrorMessage>
                         </span>
-                        <label htmlFor="founderName">Founder's Name</label>
-                        <Field name="founderName" placeholder="Enter your Founder's Name" />
+                        <label htmlFor="founder_name">Founder's Name</label>
+                        <Field name="founder_name" placeholder="Enter your Founder's Name" />
                         <span className="error">
-                          <ErrorMessage name="founderName"></ErrorMessage>
+                          <ErrorMessage name="founder_name"></ErrorMessage>
                         </span>
                         <label htmlFor="email">NGO Email Id</label>
                         <Field
@@ -314,9 +303,6 @@ function Login(props) {
                             </span>
                           </div>
                         </div>
-                        <span className="error">
-                          <ErrorMessage name="password"></ErrorMessage>
-                        </span>
                         <span className="error">
                           <ErrorMessage name="password"></ErrorMessage>
                         </span>

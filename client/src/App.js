@@ -6,6 +6,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import "./App.css";
+import Dashboard from "./components/dashboard/dashboard";
+import Home from "./components/home/home";
 import Login from "./components/login/login";
 // function RequireAuth({ children }) {
 //   var token = localStorage.getItem("authToken");
@@ -40,6 +42,8 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </div>
