@@ -8,7 +8,7 @@ function UpdateDetails({ ngo }) {
   const [selectTags, setTags] = useState([]);
   const [branches, setBranches] = useState([]);
   const [img, setImg] = useState([]);
-  const [logo, setLogo] = useState([]);
+  const [logo, setLogo] = useState("");
   const [imgError, setImgError] = useState([]);
   const [branchError, setBranchError] = useState([]);
   const [tagError, setTagError] = useState([]);
@@ -118,21 +118,20 @@ function UpdateDetails({ ngo }) {
         }}
         // validationSchema={LoginSchema}
         onSubmit={async (values) => {
-            console.log(values);
+          console.log(values);
           await axios
-            .post(`/api/details/updateDetails/${localStorage.getItem('userId')}`, values)
+            .patch(
+              `/api/details/updateDetails/${localStorage.getItem("userId")}`,
+              values
+            )
             .then((data) => {
+              console.log(data);
               if (data.status == 200) {
-                localStorage.setItem("authToken", data.data.token);
-                localStorage.setItem("userId", data.data.id);
                 Toast.fire({
-                  title: "Login Successfull",
+                  title: "Details Successfully Updated",
                   icon: "success",
                   timer: 1500,
-                  timerProgressBar: true,
-                  didClose: () => {
-                    window.location.href = "/dashboard";
-                  },
+                  timerProgressBar: true
                 });
               }
             })
@@ -179,7 +178,7 @@ function UpdateDetails({ ngo }) {
                 ) : (
                   ""
                 )}
-                {logo != "" && logo != undefined  ? (
+                {logo != "" && logo != undefined ? (
                   <p>
                     <p>Logo:</p>
                     <span>
@@ -337,11 +336,11 @@ function UpdateDetails({ ngo }) {
                 <div className="row">
                   <div className="col-10 col-md-11">
                     <select id="donationType">
-                        <option value="">--SELECT--</option>
-                        <option value="money">Money</option>
-                        <option value="clothes">Clothes</option>
-                        <option value="food">Food</option>
-                        <option value="education">Education</option>
+                      <option value="">--SELECT--</option>
+                      <option value="money">Money</option>
+                      <option value="clothes">Clothes</option>
+                      <option value="food">Food</option>
+                      <option value="education">Education</option>
                     </select>
                   </div>
                   <div className="col-2 col-md-1">

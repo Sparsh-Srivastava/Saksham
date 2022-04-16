@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./individualNGO.module.css";
 import { FaUserCircle } from "react-icons/fa";
 import Gallery from "./gallery/gallery";
+import axios from "axios";
 function IndividualNGO(props) {
   const imgs = [
     "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
@@ -13,6 +14,17 @@ function IndividualNGO(props) {
     "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
     "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
   ];
+  const getDetails = async ()=>{
+    await axios
+      .get(`/api/details/getNGO/${localStorage.getItem('userId')}`)
+      .then((data)=>{
+        console.log(data.data);
+      })
+      .catch((err) => console.log(err));
+  }
+  useEffect( () => {
+    getDetails();
+  }, []);
   return (
     <div className={styles.individualNGO}>
       <div className="row align-items-center">
@@ -86,7 +98,7 @@ function IndividualNGO(props) {
           </div>
         </div>
       </div>
-      <Gallery imgs={imgs}/>
+      <Gallery imgs={imgs} />
       <div className={styles.donation}>
         <h3>Donation</h3>
         <h4>Donation Type</h4>
