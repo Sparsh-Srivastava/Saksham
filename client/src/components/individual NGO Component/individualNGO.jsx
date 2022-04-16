@@ -2,102 +2,70 @@ import React, { useEffect, useState } from "react";
 import styles from "./individualNGO.module.css";
 import { FaUserCircle } from "react-icons/fa";
 import Gallery from "./gallery/gallery";
-function IndividualNGO({ngoDetails}) {
+import {IoCallSharp,IoLogoInstagram,IoLogoLinkedin} from 'react-icons/io5';
+import {MdOutlineEmail} from 'react-icons/md';
+function IndividualNGO({ ngoDetails }) {
   console.log(ngoDetails);
-  const [ngo,setNGO] = useState(ngoDetails);
-  const imgs = [
-    "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
-    "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
-    "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
-    "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
-    "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
-    "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
-    "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
-    "https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg",
-  ];
-  return (
-    ngo != undefined ?
+  const [ngo, setNGO] = useState(ngoDetails);
+  return ngo != undefined ? (
     <div className={styles.individualNGO}>
       <div className="row align-items-center">
         <div className="col-md-3 text-center">
-          <img
-            src={ngo.logo}
-            alt=""
-          />
+          <img src={ngo.logo} alt="" />
         </div>
         <div className="col-md-9">
           <h3>{ngo.ngo_name}</h3>
-          <p>
-            {ngo.ngo_description}
-          </p>
-          <button className={`ms-auto btn btn-primary ${styles.webBtn}`}>
+          <p>{ngo.ngo_description}</p>
+          <button className={`ms-auto btn btn-primary ${styles.webBtn}`} onClick={()=>window.location.href = ngo.website_link}>
             Visit Website
           </button>
         </div>
       </div>
       <div className={styles.wordFromFounder}>
         <h3>A Word from our Founder</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
-        </p>
+        <p>{ngo.ceo_statement}</p>
       </div>
-      <div className={`${styles.testimonials} row`}>
-        <h3>Testimonials</h3>
-        <div className="col-md-6 row align-items-center">
-          <div className="col-2">
-            <FaUserCircle size={70} />
-          </div>
-          <div className="col-10">
-            <h4>Mr Mukesh Ambani</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla id
-              earum, quasi officia excepturi perferendis modi unde quam
-              reprehenderit. Velit ea iure pariatur obcaecati quis!
-            </p>
-          </div>
-        </div>
-        <div className="col-md-6 row align-items-center">
-          <div className="col-2">
-            <FaUserCircle size={70} />
-          </div>
-          <div className="col-10">
-            <h4>Mr Mukesh Ambani</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla id
-              earum, quasi officia excepturi perferendis modi unde quam
-              reprehenderit. Velit ea iure pariatur obcaecati quis!
-            </p>
-          </div>
-        </div>
-      </div>
-      <Gallery imgs={imgs} />
+      <Gallery imgs={ngo.gallery} />
       <div className={styles.donation}>
-        <h3>Donation</h3>
-        <h4>Donation Type</h4>
-        <h4>Branches</h4>
-        <h4>Funds</h4>
+        <h3>Donation:</h3>
+        <h5>
+          Donation Type:&nbsp;
+          {ngo.donation_type.map((donation) => {
+            return <span>{donation}</span>;
+          })}
+        </h5>
+        <h5>
+          Branches:&nbsp;
+          {ngo.branches.map((branch) => {
+            return <span>{branch}</span>;
+          })}
+        </h5>
+        <h5>
+          Funds:&nbsp; <span>{ngo.funds}</span>
+        </h5>
       </div>
       <div className={styles.contactUs}>
         <h3>Contact Details</h3>
-        <h4>Donation Type</h4>
-        <h4>Branches</h4>
-        <h4>Funds</h4>
+        <div className="row align-items-center">
+          <div className="col-3">
+            <h5><span><IoCallSharp size={28}/>&nbsp;</span>&nbsp;{ngo.phone}</h5>
+          </div>
+          <div className="col-3">
+            <h5><span><MdOutlineEmail size={28}/>&nbsp;</span>&nbsp;{ngo.email}</h5>
+          </div>
+        </div>
+        <div className="row align-items-center">
+          <div className="col-3">
+            <h5><span><IoLogoInstagram size={28}/>&nbsp;</span>&nbsp;{ngo.instagram}</h5>
+          </div>
+          <div className="col-3">
+            <h5><span><IoLogoLinkedin size={28}/>&nbsp;</span>&nbsp;{ngo.linkdin}</h5>
+          </div>
+        </div>
       </div>
     </div>
-    : ''
+  ) : (
+    ""
   );
 }
 
