@@ -12,7 +12,8 @@
 }
 .ngoCard {
   padding: 2% 3%;
-  font-family: 'Poppins';
+    color: #05386b;
+    font-family: 'Poppins';
 }
 .ngoCard > div {
   border-radius: 16px !important;
@@ -20,6 +21,7 @@
 .ngoCard img {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  height: 33vh;
 }
 .ngoCard > div > div {
   padding-bottom: 0;

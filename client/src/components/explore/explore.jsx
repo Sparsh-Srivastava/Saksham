@@ -106,7 +106,7 @@ function Explore(props) {
           />
         </div>
       </div>
-      <div className="row align-items-center">
+      <div className="row ">
         <h1>Results</h1>
         {searchItem.length > 0 ? (
           searchItem.map((ngo, index) => {
