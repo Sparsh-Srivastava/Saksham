@@ -84,7 +84,7 @@ function Footer() {
             <div className="col-2">
               <FaMapMarkedAlt />
             </div>
-            <div className="col-10">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus quis perspiciatis voluptas! Maxime, iste ad?</div>
+            <div className="col-10">BRUTE_FORCE TEAM</div>
           </div>
         </div>
       </div>
