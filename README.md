@@ -56,10 +56,10 @@ localhost:3000
 ```
 
 ## Proposed Design
-![Design1](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/design_1.png) ![Design2](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/design_2.png)![Design3](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/design_3.png)
+![Design1](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/design_1.png) ![Design2](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/design_2.png)![Design3](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/design_3.png)
 
 ## Demonstration
-![site1](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/site_1.png) ![site2](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/site_2.png) ![site3](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/site_3.png) ![site4](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/site_4.png)![site5](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/site_5.png)![site6](https://github.com/Sparsh-Srivastava/Ssaksham/blob/main/Screenshots/site_6.png)
+![site1](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/site_1.png) ![site2](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/site_2.png) ![site3](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/site_3.png) ![site4](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/site_4.png)![site5](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/site_5.png)![site6](https://github.com/Sparsh-Srivastava/Saksham/blob/main/Screenshots/site_6.png)
 
 ## NLP MODEL
 - [Collab Notebook](https://github.com/Sparsh-Srivastava/Paper/blob/main/Saksham_NLP.ipynb)
