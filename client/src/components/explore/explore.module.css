@@ -1,4 +1,48 @@
-.explore > div{
-    margin: 0 !important;
-    padding: 3%;
+.explore > div {
+  margin: 0 !important;
+  padding: 3% 3% 1%;
+  text-align: start;
+  font-family: 'Poppins';
+}
+.explore h1{
+    color: #05386b;
+    font-family: 'Poppins';
+}
+.explore input {
+  border: none;
+  display: block;
+  border-bottom: 1.5px solid black;
+  width: 100%;
+  margin: 0.5% 0;
+  padding: 1% 0.5%;
+  caret-color: #05386b;
+  color: #5f6368;
+}
+.explore select{
+    border: none;
+  border-bottom: 1.5px solid black;
+  margin: 0.5% 2%;
+  padding: 1% 0.5%;
+  caret-color: #05386b;
+  color: #5f6368;
+}
+.explore select:active,
+.explore select:focus-visible,
+.explore select:active::placeholder,
+.explore select:focus-visible::placeholder {
+  outline: none;
+  border-width: 3px;
+  border-bottom-color: #05386b;
+  color: #05386b;
+  font-weight: 500;
+}
+.explore input:active,
+.explore input:focus-visible,
+.explore input:active::placeholder,
+.explore input:focus-visible::placeholder {
+  outline: none;
+  border-width: 3px;
+  border-bottom-color: #05386b;
+  color: #05386b;
+  font-weight: 500;
 }

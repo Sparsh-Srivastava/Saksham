@@ -6,5 +6,6 @@
     margin-top: 3%;
 }
 .gallery img{
+    width: 100%;
     padding: 3%;
 }

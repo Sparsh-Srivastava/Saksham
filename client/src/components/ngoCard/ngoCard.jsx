@@ -19,6 +19,8 @@ function NgoCard({ ngo }) {
             {ngo.branches.map((branch, i) => {
               if(i <=3 ){
                 return <span>{branch}</span>;
+              }else if(i == 4){
+                return "And More..."
               }
             })}
           </h5>
