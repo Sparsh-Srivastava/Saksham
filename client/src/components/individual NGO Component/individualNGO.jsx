@@ -27,7 +27,7 @@ function IndividualNGO({ ngoDetails }) {
       </div>
       <Gallery imgs={ngo.gallery} />
       <div className={styles.donation}>
-        <h3>Donation:</h3>
+        <h3>Donation Details:</h3>
         <h5>
           Donation Type:&nbsp;
           {ngo.donation_type.map((donation) => {
@@ -47,18 +47,18 @@ function IndividualNGO({ ngoDetails }) {
       <div className={styles.contactUs}>
         <h3>Contact Details</h3>
         <div className="row align-items-center">
-          <div className="col-3">
+          <div className="col-5">
             <h5><span><IoCallSharp size={28}/>&nbsp;</span>&nbsp;{ngo.phone}</h5>
           </div>
-          <div className="col-3">
+          <div className="col-5">
             <h5><span><MdOutlineEmail size={28}/>&nbsp;</span>&nbsp;{ngo.email}</h5>
           </div>
         </div>
         <div className="row align-items-center">
-          <div className="col-3">
+          <div className="col-5">
             <h5><span><IoLogoInstagram size={28}/>&nbsp;</span>&nbsp;{ngo.instagram}</h5>
           </div>
-          <div className="col-3">
+          <div className="col-5">
             <h5><span><IoLogoLinkedin size={28}/>&nbsp;</span>&nbsp;{ngo.linkdin}</h5>
           </div>
         </div>

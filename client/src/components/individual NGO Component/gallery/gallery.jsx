@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./gallery.module.css";
-import Carousel, { slidesToShowPlugin } from "@brainhubeu/react-carousel";
+import Carousel, { slidesToShowPlugin,autoplayPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 function Gallery({ imgs }) {
   return (
@@ -17,7 +17,14 @@ function Gallery({ imgs }) {
                 numberOfSlides: 3,
               },
             },
+            {
+              resolve: autoplayPlugin,
+              options: {
+                interval: 2000,
+              },
+            },
           ]}
+          animationSpeed={1000}
         >
           {imgs.map((img) => {
             return <img src={img} alt="" />;

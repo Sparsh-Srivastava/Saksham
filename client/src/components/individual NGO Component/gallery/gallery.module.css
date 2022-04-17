@@ -5,3 +5,6 @@
 .gallery > div{
     margin-top: 3%;
 }
+.gallery img{
+    padding: 3%;
+}
